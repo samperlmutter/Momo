@@ -19,7 +19,7 @@ import edu.wpi.first.wpilibj.*;
  * creating this project, you must also update the manifest file in the resource
  * directory.
  */
-public class RobotTemplate extends SimpleRobot {
+public class Momo extends SimpleRobot {
 
     Joystick Joystick1 = new Joystick(1);
     Joystick JoyStick2 = new Joystick(2);
@@ -28,6 +28,10 @@ public class RobotTemplate extends SimpleRobot {
     Relay compressorSpike = new Relay(1);
     DigitalInput digitalCompresser = new DigitalInput(1);
     DoubleSolenoid magazine = new DoubleSolenoid(1, 2);
+    Jaguar frontMotor = new Jaguar(5);
+    Jaguar backMotor = new Jaguar(6);
+    
+    
 
     public void autonomous() {
 
@@ -64,6 +68,7 @@ public class RobotTemplate extends SimpleRobot {
             {
                 magazine.set(DoubleSolenoid.Value.kReverse);
             }
+            System.out.println("Joystick throttle = " + JoyStick2.getThrottle());
             Timer.delay(0.01);
 
         }
